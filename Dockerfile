@@ -1,3 +1,3 @@
-FROM python:3.8-bullseye
+FROM python:3.8
 WORKDIR /home/app
 VOLUME ./ ./
