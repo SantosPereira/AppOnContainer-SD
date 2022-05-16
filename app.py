@@ -1,10 +1,11 @@
 from flask import Flask, render_template, make_response, request, jsonify
+from settings import *
 
-app = Flask(__name__)
+from blueprint import bp
 
-@app.route('/')
-def index():
-    return 'Aplicação rodando'
+app = Flask(__name__, template_folder=TEMPLATE_DIR)
+
+app.register_blueprint(bp, url_prefix="/")
 
 if __name__ == '__main__':
     app.run(debug=True)
