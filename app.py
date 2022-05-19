@@ -3,7 +3,7 @@ from settings import *
 
 from blueprint import bp
 
-app = Flask(__name__, template_folder=TEMPLATE_DIR)
+app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
 app.register_blueprint(bp, url_prefix="/")
 
