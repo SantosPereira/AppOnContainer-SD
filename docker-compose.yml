@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mariadb:
+    build: ./DB
+    volumes:
+      - ./DB:/home/mariadb
+    ports:
+      - "2020:3306"
+    networks:
+      - rede
+
+  app:
+    build: ./
+    ports:
+      - "8085:5500"
+    networks:
+      - rede
+
+networks:
+  rede:
+    driver: bridge
