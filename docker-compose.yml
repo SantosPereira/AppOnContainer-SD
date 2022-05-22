@@ -3,16 +3,20 @@ version: '3'
 services:
   app:
     build: ./
+    links:
+      - banco
     networks:
       - rede
     ports:
       - "8080:5000"
 
-  mysql:      
+  banco:      
     image: mysql:latest
     environment:
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: prod
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1234
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 1234
     networks:
       - rede
     ports:
