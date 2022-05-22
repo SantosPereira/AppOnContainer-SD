@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Pedag</title>
+</head>
+
+<body>
+    <header>
+        <h1>Alterar registro</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Cadastre uma nova entrada</h2>
+            <div>
+                <form action="/alterar/{{ registro.id }}/salvar" method="post">
+                    <label>Placa do veículo</label>
+                    <input type="text" name="placa" value="{{ registro.placa }}"/>
+
+                    <label>Hora de entrada</label>
+                    <input type="datetime-local" name="hora_entrada" value="{{ registro.hora_entrada }}"/>
+
+                    <label>Valor Pago</label>
+                    <input type="number" name="valor_pago" value="{{ registro.valor_pago }}"/>
+
+                    <input type="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

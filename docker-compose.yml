@@ -8,12 +8,13 @@ services:
     ports:
       - "8080:5000"
 
-  mariadb:      
-    image: mariadb:latest
+  mysql:      
+    image: mysql:latest
     environment:
-      MARIADB_MYSQL_LOCALHOST_USER: dev
-      MARIADB_ROOT_PASSWORD: 123456
-      MARIADB_DATABASE: prod
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: prod
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
     networks:
       - rede
     ports:
