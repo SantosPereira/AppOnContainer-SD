@@ -1,6 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
 @media screen {
     * {
-        font-family: 'Montserrat';
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: none;
     }
+    html, body {
+        margin: 0;
+        background-color: azure;
+    }
+}
+
+header, form div  {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-top: -1rem;
+    margin-bottom: 5rem;
+    
+    background-color: rgba(219, 226, 224, 0.897);
+}
+
+h1, h2 {
+    font-size: 3rem;
+    font-family: 'Montserrat';
+}
+
+header h1 {
+    margin-left: 3rem;
+    color: rgb(255, 82, 14);
+}
+
+header h1 #ponto {
+    color: rgb(99, 167, 92);
+}
+
+header h1 #io {
+    color: rgb(197, 13, 90);
+}
+
+header p {
+    margin-top: -1.3rem;
+    margin-left: 3rem;
+    font-size: 1rem;
+    font-style: oblique;
+}
+
+main {
+    display: flex;
+    flex-direction: row-reverse;
+
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+section {
+    /* s */
+}
+
+section h2 {
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+input {
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+
+article h2 {
+    font-size: 2rem;
+}
+
+table {
+    text-align: center;
 }

@@ -11,44 +11,48 @@
 
 <body>
     <header>
-        <h1>Pedag.io</h1>
-        <h3>Controle de estacionamento</h3>
+        <h1>Pedag<span id="ponto">.</span><span id="io">io</span></h1>
+        <p>Controle de estacionamento</p>
     </header>
-    <navbar>
-        <a>Consultar veículo</a>
-        <a>Registros anteriores</a>
-    </navbar>
     <main>
         <section>
             <h2>Cadastre uma nova entrada</h2>
             <div>
                 <form action="/cadastrar" method="post">
-                    <label>Placa do veículo</label>
-                    <input type="text" name="placa"/>
+                    <div>
+                        <label>Placa do veículo</label>
+                        <input type="text" name="placa"/>
+                    </div>
 
-                    <label>Hora de entrada</label>
-                    <input type="datetime-local" name="hora_entrada"/>
-
-                    <label>Valor Pago</label>
-                    <input type="number" name="valor_pago"/>
+                    <div>
+                        <label>Hora de entrada</label>
+                        <input type="datetime-local" name="hora_entrada"/>
+                    </div>
+                    
+                    <div>
+                        <label>Valor Pago</label>
+                        <input type="number" name="valor_pago"/>
+                    </div>
 
                     <input type="submit">
                 </form>
             </div>
         </section>
         <article>
+            <h2>Registros</h2>
             <table>
-                <th>
-                    <td>Placa</td>
-                    <td>Hora de entrada</td>
-                    <td>Hora de saída</td>
-                    <td>Valor pago</td>
+                <tbody>
+                    <tr>
+                    <th>Placa</th>
+                    <th>Hora de entrada</th>
+                    <th>Hora de saída</th>
+                    <th>Valor pago</th>
 
                     <!-- Quantidade de vezes que já usou o serviço -->
-                    <td>Recorrencia</td>
+                    <th>Recorrencia</th>
                     
-                    <td>Ações</td>
-                </th>
+                    <th>Ações</th>
+                </tr>
                 {% for registro in registros %}
                     <tr>
                         <td>{{ registro.placa }}</td>
@@ -61,9 +65,10 @@
                             <button><a href="/apagar/{{ registro.id }}">Deletar</a></button>
                         </td>
                     </tr>
-                {% endfor %}
-            </table>
-        </article>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </article>
     </main>
 </body>
 
