@@ -49,7 +49,7 @@
                     <th>Valor pago</th>
 
                     <!-- Quantidade de vezes que já usou o serviço -->
-                    <th>Recorrencia</th>
+                    <th>Recorrência</th>
                     
                     <th>Ações</th>
                 </tr>
@@ -58,7 +58,7 @@
                         <td>{{ registro.placa }}</td>
                         <td>{{ registro.hora_entrada }}</td>
                         <td>{{ registro.hora_saida }}</td>
-                        <td>{{ registro.valor_pago }}</td>
+                        <td>R$ {{ registro.valor_pago }}</td>
                         <td>{{ registro.recorrencia }}</td>
                         <td>
                             <button><a href="/alterar/{{ registro.id }}">Alterar</a></button>
